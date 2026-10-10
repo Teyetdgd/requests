@@ -116,7 +116,8 @@ jobs:
         # requests: install obfuscated package editable with test extras,
         # then run pytest.
         python -m pip install --upgrade pip
-        python -m pip install -e ".[socks,tests]"
+        python -m pip install -e ".[socks]"
+        python -m pip install pytest pytest-httpbin==2.1.0 'httpbin~=0.10.0' pytest-cov pytest-mock
         python -m pytest tests/ -q
 
     - name: 7. Commit and Push Changes
