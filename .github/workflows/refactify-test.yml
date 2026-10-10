@@ -117,7 +117,7 @@ jobs:
         # then run pytest.
         python -m pip install --upgrade pip
         python -m pip install -e ".[socks,tests]"
-        pytest tests/ -q
+        python -m pytest tests/ -q
 
     - name: 7. Commit and Push Changes
       env:
